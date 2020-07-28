@@ -29,5 +29,8 @@ class WeekdaysSeeder extends Seeder
         DB::table('weekdays')->insert([
             'title'     => 'Friday'
         ]);
+        DB::table('weekdays')->insert([
+            'title'     => 'Saturday'
+        ]);
     }
 }

@@ -15,11 +15,9 @@
                                         <div class="card">
                                             <div class="card-header">{{ $week->title  }}</div>
                                             <div class="card-body">
-                                                <ul>
-                                                    @foreach($class->lessons($week->id) as $lesson)
-                                                        <li>{{ $lesson->title }} - {{ $lesson->teacher->name }} ({{ $lesson->from }} - {{ $lesson->to }})</li>
-                                                    @endforeach
-                                                </ul>
+                                                @foreach($class->lessons($week->id) as $lesson)
+                                                    {{ $lesson->title }} @if($lesson->teacher) - {{ $lesson->teacher->name }} @endif | {{ $lesson->from }} - {{ $lesson->to }}<br>
+                                                @endforeach
                                             </div>
                                         </div>
                                     </div>

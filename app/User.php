@@ -37,6 +37,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function lessons(int $weekId)
+    {
+        return $this->schedule()->where('weekday_id', $weekId)->get();
+    }
+
     public function schedule()
     {
         return $this->hasMany(Schedule::class,'user_id');
