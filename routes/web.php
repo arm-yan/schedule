@@ -16,3 +16,7 @@ Auth::routes();
 
 Route::get('/', 'GuestController@schedule')->name('schedule');
 Route::get('/home', 'GuestController@schedule')->name('schedule');
+Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
+    Route::get('/', 'Admin\DashboardController@index')->name('admin');
+});
+
